@@ -5,7 +5,7 @@ class database
 
     function connect()
     {
-        return mysqli_connect("localhost", "root", " ", "ticketing");
+        return mysqli_connect("localhost", "root", "", "ticketing");
     }
 
     function tampil_data()
