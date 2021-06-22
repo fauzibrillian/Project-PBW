@@ -1,7 +1,6 @@
 <?php
 include '../function/database.php';
 $db = new database();
-
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -13,54 +12,25 @@ $db = new database();
 
 
 <h3>Data Pengunjung</h3>
-
-<!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
 <div class="container">
-	<div class="col-md-12">
-		<table id="example" class="table table-striped table-bordered" style="width:100%">
-			<thead>
-				<tr>
-					<th>No</th>
-					<th>Nama</th>
-					<th>no ktp</th>
-					<th>no hp</th>
-					<th>aksi</th>
-				</tr>
-			</thead>
-			<?php
-			$no = 1;
-			foreach ($db->tampil_data() as $x) {
-			?>
-				<tbody>
-					<tr>
-						<td><?php echo $no++; ?></td>
-						<td><?php echo $x['nama']; ?></td>
-						<td><?php echo $x['no_ktp']; ?></td>
-						<td><?php echo $x['no_hp']; ?></td>
-						<td>
-						<a class="btn btn-primary" href="update_pengunjung.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
-						<a class="btn btn-danger" href="../controllers/Controller.php?id=<?php echo $x['id']; ?>&aksi=hapus"">Hapus</a>
-						</td>
-					</tr>
-				</tbody>
-			<?php
-			}
-			?>
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>Nama</th>
-					<th>no ktp</th>
-					<th>no hp</th>
-					<th>aksi</th>
-				</tr>
-			</tfoot>
-		</table>
-	</div>
+    <form action="../controllers/Controller.php?aksi=update" method="post">
+        <?php
+        foreach ($db->edit_pengunjung($_GET['id']) as $d) {
+        ?>
+            <div class="form-group">
+                <input type="hidden" name="id" value="<?php echo $d['id'] ?>">
+                <label for="exampleInputEmail1">Nama</label>
+                <input type="text" name="nama" class="form-control" id="nama" value="<?php echo $d['nama'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">No Ktp</label>
+                <input type="text" name="no_ktp" class="form-control" id="exampleInputPassword1" value="<?php echo $d['no_ktp'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">No HP</label>
+                <input type="text" name="no_hp" class="form-control" id="exampleInputPassword1" value="<?php echo $d['no_hp'] ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        <?php } ?>
+    </form>
 </div>
-
-<script>
-	$(document).ready(function() {
-		$('#example').DataTable();
-	});
-</script>

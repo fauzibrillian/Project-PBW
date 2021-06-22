@@ -11,51 +11,26 @@ $db = new database();
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 
 
-<h3>Data User</h3>
-
-<!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
+<h3>Update User</h3>
 <div class="container">
-	<div class="col-md-12">
-		<table id="example" class="table table-striped table-bordered" style="width:100%">
-			<thead>
-				<tr>
-					<th>No</th>
-					<th>Username</th>
-					<th>Level</th>
-					<th>Aksi</th>
-				</tr>
-			</thead>
-			<?php
-			$no = 1;
-			foreach ($db->tampil_data_users() as $x) {
-			?>
-				<tbody>
-					<tr>
-						<td><?php echo $no++; ?></td>
-						<td><?php echo $x['username']; ?></td>
-						<td><?php echo $x['level']; ?></td>
-						<td>
-						<a class="btn btn-primary" href="update_user.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
-						<a class="btn btn-danger" href="../controllers/Controller.php?id=<?php echo $x['id']; ?>&aksi=hapus_user"">Hapus</a>
-						</td>
-					</tr>
-				</tbody>
-			<?php
-			}
-			?>
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>Username</th>
-					<th>Level</th>
-					<th>Aksi</th>
-				</tr>
-			</tfoot>
-		</table>
-	</div>
+    <form action="../controllers/Controller.php?aksi=update" method="post">
+        <?php
+        foreach ($db->edit_user($_GET['id']) as $d) {
+        ?>
+            <div class="form-group">
+                <input type="hidden" name="id" value="<?php echo $d['id'] ?>">
+                <label for="exampleInputEmail1">username</label>
+                <input type="text" name="username" class="form-control" id="username" value="<?php echo $d['username'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="text" name="password" class="form-control" id="exampleInputPassword1" value="<?php echo $d['password'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Level</label>
+                <input type="text" name="level" class="form-control" id="exampleInputPassword1" value="<?php echo $d['level'] ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        <?php } ?>
+    </form>
 </div>
-<script>
-	$(document).ready(function() {
-		$('#example').DataTable();
-	});
-</script>
