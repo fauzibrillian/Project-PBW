@@ -12,11 +12,11 @@
     <div class="login_page">
         <div class="login_pagebox">
             <div class="center">
-            <img src="/view/img/cut.png" width="200px" height="180px">
+            <img src="view/img/cut.png" width="200px" height="180px">
             </div>
             <div>
-                <img src="/view/img/blue (1).png" width="40px" height="40px">
-                <img src="/view/img/red.png" width="40px" height="40px">
+                <img src="view/img/blue (1).png" width="40px" height="40px">
+                <img src="view/img/red.png" width="40px" height="40px">
             </div>
             <div class="button">
 
