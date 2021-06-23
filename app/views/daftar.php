@@ -10,27 +10,19 @@
     <title>Register Page</title>
 </head>
 <body>
-    <form action="../controllers/Controller.php?aksi=create_pengunjung" method="POST">
+    <form action="../controllers/Controller.php?aksi=create_users" method="POST">
     <div class="login_page">
         <div class="login_pagebox">
                 <img src="view/img/cut.png" width="200px" height="180px">
             <div>
                 <label for="nama">Nama</label>
-                <input type="text" id="textt" name="nama" placeholder="Nama">
+                <input type="text" id="text" name="nama" placeholder="Nama">
             </div>
-            <div>
-                <label for="no_ktp">No. KTP</label>
-                <input type="text" id="textt" name="no_ktp" placeholder="No. KTP">
+            <div >
+                <label for="no_ktp">Password</label>
+                <input type="password" id="textt" name="password" placeholder="Password">
             </div>
-            <div>
-                <label for="no_hp">No. Hp</label> 
-                <input type="text" id="textt" name="no_hp" placeholder="No. HP">
-            </div>
-            <div>
-                <label for="jadwal">Jadwal</label>
-                <input type="date" name="jadwal" placeholder="Jadwal" widht="20px" height="20px">
-            </div>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Daftar">
             <div class= "button">
                 <a id="back" href="index.html">Back</a></li>
             </div>
