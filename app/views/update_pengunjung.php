@@ -11,7 +11,7 @@ $db = new database();
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 
 
-<h3>Data Pengunjung</h3>
+<h3>update Pengunjung</h3>
 <div class="container">
     <form action="../controllers/Controller.php?aksi=update" method="post">
         <?php
