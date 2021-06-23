@@ -9,7 +9,14 @@ $aksi = $_GET['aksi'];
     if ($result) {
         header("location:../views/pengunjung.php");
     }
- }elseif($aksi == "hapus_user"){
+ }elseif($aksi == "create_users"){
+    $query = "INSERT INTO user (username, password, level) VALUES ( '". $_POST['username']."',  '". $_POST['password']."',  '". $_POST['level']."')";
+    $result = mysqli_query($db->connect(), $query);
+    if ($result) {
+        header("location:../views/users.php");
+    }
+ }
+ elseif($aksi == "hapus_user"){
     $query = "delete FROM user where id =".$_GET['id']."";
     $result = mysqli_query($db->connect(), $query);
     if ($result) {
