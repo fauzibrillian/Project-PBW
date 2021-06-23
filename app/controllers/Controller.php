@@ -29,7 +29,7 @@ $aksi = $_GET['aksi'];
         header("location:../views/pengunjung.php");
     }
  }elseif($aksi == "update_user"){
-    $query = "update user set nama = '".$_POST['nama']."', password = '". $_POST['password']."', level = '" .$_POST['level']."' where id =".$_POST['id']."";
+    $query = "update user set username = '".$_POST['username']."', password = '". $_POST['password']."', level = '" .$_POST['level']."' where id =".$_POST['id']."";
     $result = mysqli_query($db->connect(), $query);
     if ($result) {
         header("location:../views/users.php");
