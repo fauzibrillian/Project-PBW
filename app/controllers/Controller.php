@@ -9,6 +9,12 @@ $aksi = $_GET['aksi'];
     if ($result) {
         header("location:../views/pengunjung.php");
     }
+ }elseif($aksi == "register_users"){
+    $query = "INSERT INTO user (username, password, level) VALUES ( '". $_POST['username']."',  '". $_POST['password']."',  '". $_POST['level']."')";
+    $result = mysqli_query($db->connect(), $query);
+    if ($result) {
+        header("location:../views/index.html");
+    }
  }elseif($aksi == "create_users"){
     $query = "INSERT INTO user (username, password, level) VALUES ( '". $_POST['username']."',  '". $_POST['password']."',  '". $_POST['level']."')";
     $result = mysqli_query($db->connect(), $query);

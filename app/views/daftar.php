@@ -10,17 +10,21 @@
     <title>Register Page</title>
 </head>
 <body>
-    <form action="../controllers/Controller.php?aksi=create_users" method="POST">
+    <form action="../controllers/Controller.php?aksi=register_users" method="POST">
     <div class="login_page">
         <div class="login_pagebox">
                 <img src="view/img/cut.png" width="200px" height="180px">
             <div>
                 <label for="nama">Nama</label>
-                <input type="text" id="text" name="nama" placeholder="Nama">
+                <input type="text" id="text" name="username" placeholder="Nama">
             </div>
             <div >
                 <label for="no_ktp">Password</label>
                 <input type="password" id="textt" name="password" placeholder="Password">
+            </div>
+            <div >
+                <label for="no_ktp">Level</label>
+                <input type="text" id="textt" name="level" placeholder="level">
             </div>
             <input type="submit" value="Daftar">
             <div class= "button">
