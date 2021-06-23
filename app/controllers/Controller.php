@@ -34,4 +34,10 @@ $aksi = $_GET['aksi'];
     if ($result) {
         header("location:../views/users.php");
     }
+}elseif($aksi == "create_pengunjung"){
+    $query = "create pengunjung set nama = '".$_POST['nama']."', no_ktp = '". $_POST['no_ktp']."', no_hp = '" .$_POST['no_hp']."', jadwal = '". $_POST['jadwal']."' where id =".$_POST['id']."";
+    $result = mysqli_query($db->connect(), $query);
+    if ($result) {
+        header("location:../views/register.html");
+    }
  }
