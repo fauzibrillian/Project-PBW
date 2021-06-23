@@ -35,9 +35,9 @@ $aksi = $_GET['aksi'];
         header("location:../views/users.php");
     }
 }elseif($aksi == "create_pengunjung"){
-    $query = "create pengunjung set nama = '".$_POST['nama']."', no_ktp = '". $_POST['no_ktp']."', no_hp = '" .$_POST['no_hp']."', jadwal = '". $_POST['jadwal']."' where id =".$_POST['id']."";
+    $query = "INSERT INTO pengunjung (nama, no_ktp , no_hp, jadwal) VALUES ( '". $_POST['nama']."',  '". $_POST['no_ktp']."',  '". $_POST['no_hp']."',  '". $_POST['jadwal']."')";
     $result = mysqli_query($db->connect(), $query);
     if ($result) {
-        header("location:../views/register.html");
+        header("location:../views/register.php");
     }
  }

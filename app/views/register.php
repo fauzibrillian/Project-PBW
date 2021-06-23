@@ -16,19 +16,19 @@
                 <img src="view/img/cut.png" width="200px" height="180px">
             <div>
                 <img src="view/img/black.png" width="20px" height="20px">
-                <input type="text" id="textt" placeholder="Nama">
+                <input type="text" id="textt" name="nama" placeholder="Nama">
             </div>
             <div>
                 <img src="view/img/email.png" width="20px" height="20px">
-                <input type="text" id="textt" placeholder="No. KTP">
+                <input type="text" id="textt" name="no_ktp" placeholder="No. KTP">
             </div>
             <div>
                 <img src="view/img/phone.png" width="20px" height="20px"> 
-                <input type="text" id="textt" placeholder="No. HP">
+                <input type="text" id="textt" name="no_hp" placeholder="No. HP">
             </div>
             <div>
                 <img src="view/img/lock.png" width="20px" height="25px">
-                <input type="date" placeholder="Jadwal">
+                <input type="date" name="jadwal" placeholder="Jadwal">
             </div>
             <input type="submit" value="Submit">
             <div class= "button">
