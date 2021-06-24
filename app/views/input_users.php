@@ -10,7 +10,30 @@ $db = new database();
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="view/css/font-awesome.css">
+    <script src="https://kit.fontawesome.com/bd45d9ab9b.js" crossorigin="anonymous"></script>
+    <title>Tempat Wisata</title>
+</head>
 
+
+<div class="nav">
+        <ul class="nav_left">
+            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu</li>
+            <li><a id="about" href="#about2">About us</a></li>
+            <li><a id="contact" href="#contact2">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><a id="search"><i class="fa fa-search"></i></a></li>
+            <li><input type="text" placeholder="Search"></li>
+        </ul>
+    </div>
+<br>
+<br>
 <h3>Create User</h3>
 <div class="container">
     <form action="../controllers/Controller.php?aksi=create_users" method="post">
@@ -20,7 +43,7 @@ $db = new database();
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="text" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Level</label>

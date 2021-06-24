@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/app/views/css/main.css">
     <script src="https://kit.fontawesome.com/bd45d9ab9b.js" crossorigin="anonymous"></script>
-    <title>Login Pemilik</title>
+    <title>Login </title>
 </head>
+
 
 <body>
     <div class="container">

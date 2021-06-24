@@ -1,7 +1,6 @@
 <?php
 include '../function/database.php';
 $db = new database();
-
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -23,7 +22,7 @@ $db = new database();
 
 <div class="nav">
         <ul class="nav_left">
-            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu </li>
+            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a></li>
             <li><a id="about" href="#about2">About us</a></li>
             <li><a id="contact" href="#contact2">Contact</a></li>
         </ul>
@@ -34,22 +33,49 @@ $db = new database();
     </div>
 <br>
 <br>
-
-<h3>Menu Penjual</h3>
-
-<!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
+<h3>Data Ticket</h3>
+<a class="btn btn-primary" href="input_ticket.php">Input Data</a>		
 <div class="container">
 	<div class="col-md-12">
-		<table class="table">
-            <tr>
-            <td><a href="" class="btn btn-primary">Laporan Pengunjung</a></td>
-            <td><a href="" class="btn btn-primary">Laporan booking</a></td>
-            <td><a href="" class="btn btn-primary">Laporan penjualan</a></td>
-            </tr>
-        </table>
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Jumlah</th>
+					<th>Harga</th>
+					<th>Hari</th>
+				</tr>
+			</thead>
+			<?php
+			$no = 1;
+			foreach ($db->tampil_data_ticket() as $x) {
+			?>
+				<tbody>
+					<tr>
+						<td><?php echo $no++; ?></td>
+						<td><?php echo $x['jumlah']; ?></td>
+                        <td><?php echo $x['harga']; ?></td>
+                        <td><?php echo $x['hari']; ?></td>
+						<td>
+						<a class="btn btn-primary" href="update_ticket.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
+						<a class="btn btn-danger" href="../controllers/Controller.php?id=<?php echo $x['id']; ?>&aksi=hapus_ticket">Hapus</a>
+						</td>
+					</tr>
+				</tbody>
+			<?php
+			}
+			?>
+			<tfoot>
+				<tr>
+					<th>No</th>
+					<th>Username</th>
+					<th>Level</th>
+					<th>Aksi</th>
+				</tr>
+			</tfoot>
+		</table>
 	</div>
 </div>
-
 <script>
 	$(document).ready(function() {
 		$('#example').DataTable();

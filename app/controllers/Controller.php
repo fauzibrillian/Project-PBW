@@ -46,4 +46,23 @@ $aksi = $_GET['aksi'];
     if ($result) {
         header("location:../views/register.php");
     }
+}elseif($aksi == "create_ticket"){
+        $query = "INSERT INTO ticket (jumlah, harga , hari) VALUES ( '". $_POST['jumlah']."',  '". $_POST['harga']."',  '". $_POST['hari']."')";
+        $result = mysqli_query($db->connect(), $query);
+        if ($result) {
+            header("location:../views/ticket.php");
+        }
+} elseif($aksi == "hapus_ticket"){
+        $query = "delete FROM ticket where id =".$_GET['id']."";
+        $result = mysqli_query($db->connect(), $query);
+        if ($result) {
+            header("location:../views/ticket.php");
+        }
+}elseif($aksi == "update_ticket"){
+    $query = "update ticket set jumlah = '".$_POST['jumlah']."', harga = '". $_POST['harga']."', hari = '" .$_POST['hari']."' where id =".$_POST['id']."";
+    $result = mysqli_query($db->connect(), $query);
+    if ($result) {
+        header("location:../views/ticket.php");
+    }
+    
  }

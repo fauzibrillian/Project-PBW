@@ -1,7 +1,6 @@
 <?php
 include '../function/database.php';
 $db = new database();
-
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -10,6 +9,7 @@ $db = new database();
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@ $db = new database();
 
 <div class="nav">
         <ul class="nav_left">
-            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu </li>
+            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu</li>
             <li><a id="about" href="#about2">About us</a></li>
             <li><a id="contact" href="#contact2">Contact</a></li>
         </ul>
@@ -34,24 +34,21 @@ $db = new database();
     </div>
 <br>
 <br>
-
-<h3>Menu Penjual</h3>
-
-<!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
+<h3>Create User</h3>
 <div class="container">
-	<div class="col-md-12">
-		<table class="table">
-            <tr>
-            <td><a href="" class="btn btn-primary">Laporan Pengunjung</a></td>
-            <td><a href="" class="btn btn-primary">Laporan booking</a></td>
-            <td><a href="" class="btn btn-primary">Laporan penjualan</a></td>
-            </tr>
-        </table>
-	</div>
+    <form action="../controllers/Controller.php?aksi=create_ticket" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Jumlah</label>
+            <input type="text" name="jumlah" class="form-control" id="jumlah">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Harga</label>
+            <input type="text" name="harga" class="form-control" id="harga">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Hari</label>
+            <input type="text" name="hari" class="form-control" id="hari">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
-
-<script>
-	$(document).ready(function() {
-		$('#example').DataTable();
-	});
-</script>
