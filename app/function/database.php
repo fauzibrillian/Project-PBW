@@ -5,7 +5,7 @@ class database
 
     function connect()
     {
-        return mysqli_connect("localhost", "root", "", "ticketing");
+        return mysqli_connect("localhost", "root", "mafud123", "sistem_reservasi");
     }
 
     function tampil_data()
@@ -126,4 +126,26 @@ class database
             return $hasil;
         }
     }
+    /** Generate Unix Code
+     */
+    function generate_kode($unix, $order_number, $digit = 5)
+    {
+        $unix_number = (($order_number == null) ? 1 : intval(substr($order_number, -$digit)) + 1);
+        $unix_number = str_pad($unix_number, $digit, '0', STR_PAD_LEFT);
+        return $unix . $unix_number;
+    }
+    function generate_transaksi(){
+        $db    = $this->connect();
+        $tgl   = date('Y/m');
+        $data = mysqli_query($db->connect(),"SELECT kode FROM transaksi ORDER BY id DESC");
+        $hasil = [];
+        if ($data) {
+            while ($row = mysqli_fetch_array($data)) {
+                $hasil[] = $row;
+            }
+        }
+        $kode  = $this->generate_kode("RTS/$tgl", $hasil[0]['kode'], 5);
+        return $kode;
+    }
+
 }

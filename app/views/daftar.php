@@ -9,6 +9,10 @@
     <script src="https://kit.fontawesome.com/bd45d9ab9b.js" crossorigin="anonymous"></script>
     <title>Register Page</title>
 </head>
+<?php 
+$rand = uniqid(rand(), true);
+print_r($rand);exit;
+?>
 <body>
     <form action="../controllers/Controller.php?aksi=register_users" method="POST">
     <div class="login_page">

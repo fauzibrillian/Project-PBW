@@ -10,6 +10,19 @@
     <title>Register Page</title>
 </head>
 <body>
+<?php
+            if (isset($_GET['pesan'])) {
+                if ($_GET['pesan'] == "gagal") {
+                    echo "Jumlah tiket melebihi yg telah ditentukan";
+                }elseif ($_GET['pesan'] == "hari") {
+                    echo "Tanggal belum dipilih";
+                }elseif ($_GET['pesan'] == "kosong") {
+                    echo "Tidak ada jadwal pada hari yg dipilih";
+                }elseif ($_GET['pesan'] == "over") {
+                    echo "Jumlah pesan tiket melebihi yg ditentukan pemilik";
+                }
+            }
+            ?>
     <form action="../controllers/Controller.php?aksi=create_pengunjung" method="POST">
     <div class="login_page">
         <div class="login_pagebox">
@@ -25,6 +38,10 @@
             <div>
                 <label for="no_hp">No. Hp</label> 
                 <input type="text" id="textt" name="no_hp" placeholder="No. HP">
+            </div>
+            <div>
+                <label for="jumlah">Jumlah</label>
+                <input type="number" name="jumlah" placeholder="jumlah tiket" widht="20px" height="20px">
             </div>
             <div>
                 <label for="jadwal">Jadwal</label>
