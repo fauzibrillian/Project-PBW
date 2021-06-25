@@ -47,6 +47,25 @@ class database
             return $hasil;
         }
     }
+        function tampil_data_penjualan()
+    {
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_error());
+            exit();
+        }
+
+        $query = "SELECT pengunjung.jadwal, ticket.jumlah FROM pengunjung INNER JOIN ticket ON pengunjung.id = ticket.id;";
+        $result = mysqli_query($this->connect(), $query);
+        $chart_data = '';
+
+        // cek result
+        if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
+                $hasil[] = $row;
+            }
+            return $hasil;
+        }
+    }
 
     function tampil_data_ticket()
     {

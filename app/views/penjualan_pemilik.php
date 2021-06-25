@@ -35,18 +35,43 @@ $db = new database();
 <br>
 <br>
 
-<h3>Menu Penjual</h3>
+<h3>Data Penjualan</h3>
 
 <!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
 <div class="container">
 	<div class="col-md-12">
-		<table class="table">
-            <tr>
-            <td><a href="pengunjung_pemilik.php" class="btn btn-primary">Laporan Pengunjung</a></td>
-            <td><a href="" class="btn btn-primary">Laporan booking</a></td>
-            <td><a href="penjualan_pemilik.php" class="btn btn-primary">Laporan penjualan</a></td>
-            </tr>
-        </table>
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Jadwal</th>
+					<th>Jumlah Ticket</th>
+				</tr>
+			</thead>
+			<?php
+			$no = 1;
+			foreach ($db->tampil_data_penjualan() as $x) {
+			?>
+				<tbody>
+					<tr>
+						<td><?php echo $no++; ?></td>
+						<td><?php echo $x['jadwal']; ?></td>
+						<td><?php echo $x['jumlah']; ?></td>
+						<td>
+						</td>
+					</tr>
+				</tbody>
+			<?php
+			}
+			?>
+			<tfoot>
+				<tr>
+                    <th>No</th>
+					<th>Jadwal</th>
+					<th>Jumlah Ticket</th>
+				</tr>
+			</tfoot>
+		</table>
 	</div>
 </div>
 
