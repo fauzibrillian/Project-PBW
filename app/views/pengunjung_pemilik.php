@@ -47,7 +47,6 @@ $db = new database();
 					<th>Nama</th>
 					<th>no ktp</th>
 					<th>no hp</th>
-					<th>aksi</th>
 				</tr>
 			</thead>
 			<?php
@@ -61,8 +60,6 @@ $db = new database();
 						<td><?php echo $x['no_ktp']; ?></td>
 						<td><?php echo $x['no_hp']; ?></td>
 						<td>
-						<a class="btn btn-primary" href="update_pengunjung.php?id=<?php echo $x['id']; ?>&aksi=edit">Edit</a>
-						<a class="btn btn-danger" href="../controllers/Controller.php?id=<?php echo $x['id']; ?>&aksi=hapus"">Hapus</a>
 						</td>
 					</tr>
 				</tbody>
@@ -75,7 +72,6 @@ $db = new database();
 					<th>Nama</th>
 					<th>no ktp</th>
 					<th>no hp</th>
-					<th>aksi</th>
 				</tr>
 			</tfoot>
 		</table>
