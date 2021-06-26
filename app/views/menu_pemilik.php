@@ -43,9 +43,9 @@ $db = new database();
             <td><a href="users.php" class="btn btn-primary">Data User</a></td>
             <td><a href="pengunjung.php" class="btn btn-primary">Data Pengunjung</a></td>
             <td><a href="ticket.php" class="btn btn-primary">Data Ticket</a></td>
-            <td><a href="" class="btn btn-primary">Laporan Pengunjung</a></td>
+            <td><a href="pengunjung_pemilik.php" class="btn btn-primary">Laporan Pengunjung</a></td>
             <td><a href="" class="btn btn-primary">Laporan booking</a></td>
-            <td><a href="" class="btn btn-primary">Laporan penjualan</a></td>
+            <td><a href="penjualan_pemilik.php" class="btn btn-primary">Laporan penjualan</a></td>
             </tr>
         </table>
 	</div>
