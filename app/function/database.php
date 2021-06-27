@@ -193,9 +193,9 @@ class database
         return $unix . $unix_number;
     }
     function generate_transaksi(){
-        $db    = $this->connect();
         $tgl   = date('Y/m');
-        $data = mysqli_query($db->connect(),"SELECT kode FROM transaksi ORDER BY id DESC");
+        $query = "SELECT kode FROM transaksi ORDER BY id DESC;";
+        $data = mysqli_query($this->connect(),$query);
         $hasil = [];
         if ($data) {
             while ($row = mysqli_fetch_array($data)) {
