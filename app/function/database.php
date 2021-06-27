@@ -54,7 +54,7 @@ class database
             exit();
         }
 
-        $query = "SELECT pengunjung.jadwal, ticket.jumlah FROM pengunjung INNER JOIN ticket ON pengunjung.id = ticket.id;";
+        $query = "SELECT pengunjung.jadwal, ticket.jumlah, ticket.harga FROM pengunjung INNER JOIN ticket ON pengunjung.id = ticket.id;";
         $result = mysqli_query($this->connect(), $query);
         $chart_data = '';
 

@@ -69,7 +69,7 @@ $db = new database();
 					<th>No</th>
 					<th>Nama</th>
 					<th>no ktp</th>
-					<th>no hp</th>
+					<th>kode transaksi</th>
 				</tr>
 			</tfoot>
 		</table>

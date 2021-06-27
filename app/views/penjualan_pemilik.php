@@ -46,6 +46,7 @@ $db = new database();
 					<th>No</th>
 					<th>Jadwal</th>
 					<th>Jumlah Ticket</th>
+					<th>Harga</th>
 				</tr>
 			</thead>
 			<?php
@@ -57,6 +58,7 @@ $db = new database();
 						<td><?php echo $no++; ?></td>
 						<td><?php echo $x['jadwal']; ?></td>
 						<td><?php echo $x['jumlah']; ?></td>
+						<td><?php echo $x['harga']; ?></td>
 						<td>
 						</td>
 					</tr>
@@ -69,6 +71,7 @@ $db = new database();
                     <th>No</th>
 					<th>Jadwal</th>
 					<th>Jumlah Ticket</th>
+					<th>Harga</th>
 				</tr>
 			</tfoot>
 		</table>
