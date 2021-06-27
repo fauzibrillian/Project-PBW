@@ -10,6 +10,7 @@ $db = new database();
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,27 +21,28 @@ $db = new database();
     <title>Tempat Wisata</title>
 </head>
 
+
 <div class="nav">
-        <ul class="nav_left">
-            <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu </li>
-            <li><a id="about" href="#about2">About us</a></li>
-            <li><a id="contact" href="#contact2">Contact</a></li>
-        </ul>
-        <ul class="nav_right">
-            <li><a id="search"><i class="fa fa-search"></i></a></li>
-            <li><input type="text" placeholder="Search"></li>
-        </ul>
-    </div>
+    <ul class="nav_left">
+        <li><a id="home" href="index.html"><i class="fa fa-home"></i></a>Menu </li>
+        <li><a id="about" href="#about2">About us</a></li>
+        <li><a id="contact" href="#contact2">Contact</a></li>
+    </ul>
+    <ul class="nav_right">
+        <li><a id="search"><i class="fa fa-search"></i></a></li>
+        <li><input type="text" placeholder="Search"></li>
+    </ul>
+</div>
 
 
 
 <div class="container">
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
     <?php
-    echo "Tiket telah terbuat dengan kode : ". $_GET['pesan'];
+    echo "Tiket telah terbuat dengan kode : " . $_GET['pesan'];
     ?>
 
 </div>
