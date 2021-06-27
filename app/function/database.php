@@ -87,6 +87,7 @@ class database
         }
     }
 
+
     function edit_ticket($id)
     {
         if (mysqli_connect_errno()) {
@@ -142,6 +143,25 @@ class database
                 $hasil[] = $row;
             }
             // print_r($hasil);exit;
+            return $hasil;
+        }
+    }
+    function tampil_data_booking()
+    {
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_error());
+            exit();
+        }
+
+        $query = "SELECT pengunjung.nama,pengunjung.no_ktp, transaksi.kode FROM pengunjung INNER JOIN transaksi ON pengunjung.id = transaksi.id;";
+        $result = mysqli_query($this->connect(), $query);
+        $chart_data = '';
+
+        // cek result
+        if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
+                $hasil[] = $row;
+            }
             return $hasil;
         }
     }

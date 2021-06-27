@@ -35,19 +35,44 @@ $db = new database();
 <br>
 <br>
 
+<h3>Data Booking</h3>
+
 <!-- <a class="btn btn-primary" href="input.php">Input Data</a> -->
-<div class="container-left">
+<div class="container">
 	<div class="col-md-12">
-		<table class="table">
-            <tr>
-            <td><a href="users.php" class="btn btn-primary">Data User</a></td>
-            <td><a href="pengunjung.php" class="btn btn-primary">Data Pengunjung</a></td>
-            <td><a href="ticket.php" class="btn btn-primary">Data Ticket</a></td>
-            <td><a href="pengunjung_pemilik.php" class="btn btn-primary">Laporan Pengunjung</a></td>
-            <td><a href="penjual_booking.php" class="btn btn-primary">Laporan booking</a></td>
-            <td><a href="penjualan_pemilik.php" class="btn btn-primary">Laporan penjualan</a></td>
-            </tr>
-        </table>
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Nama</th>
+					<th>no ktp</th>
+					<th>kode trasaksi</th>
+				</tr>
+			</thead>
+			<?php
+			$no = 1;
+			foreach ($db->tampil_data_booking() as $x ) {
+			?>
+				<tbody>
+					<tr>
+						<td><?php echo $no++; ?></td>
+						<td><?php echo $x['nama']; ?></td>
+						<td><?php echo $x['no_ktp']; ?></td>
+						<td><?php echo $x['kode'];; ?></td>
+					</tr>
+				</tbody>
+			<?php
+			}
+			?>
+			<tfoot>
+				<tr>
+					<th>No</th>
+					<th>Nama</th>
+					<th>no ktp</th>
+					<th>no hp</th>
+				</tr>
+			</tfoot>
+		</table>
 	</div>
 </div>
 

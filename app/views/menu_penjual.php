@@ -43,7 +43,7 @@ $db = new database();
 		<table class="table">
             <tr>
             <td><a href="pengunjung_pemilik.php" class="btn btn-primary">Laporan Pengunjung</a></td>
-            <td><a href="" class="btn btn-primary">Laporan booking</a></td>
+            <td><a href="penjual_booking.php" class="btn btn-primary">Laporan booking</a></td>
             <td><a href="penjualan_pemilik.php" class="btn btn-primary">Laporan penjualan</a></td>
             </tr>
         </table>
