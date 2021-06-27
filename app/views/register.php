@@ -32,7 +32,7 @@
             <table>
                 <thead>
                     <tr>
-                        <td>Hari</td>
+                        <!-- <td>Hari</td> -->
                         <td>Harga</td>
                     </tr>
                 </thead>
@@ -41,7 +41,6 @@
                 ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $x['hari']; ?></td>
                             <td><?php echo $x['harga']; ?></td>
                             <td>
                             </td>
