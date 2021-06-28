@@ -29,27 +29,6 @@
     ?>
     <form action="../controllers/Controller.php?aksi=create_pengunjung" method="POST">
         <div class="login_page">
-            <table>
-                <thead>
-                    <tr>
-                        <!-- <td>Hari</td> -->
-                        <td>Harga</td>
-                    </tr>
-                </thead>
-                <?php
-                foreach ($db->tampil_data_ticketing() as $x) {
-                ?>
-                    <tbody>
-                        <tr>
-                            <td><?php echo $x['harga']; ?></td>
-                            <td>
-                            </td>
-                        </tr>
-                    </tbody>
-                <?php
-                }
-                ?>
-            </table>
             <div class="login_pagebox">
                 <img src="view/img/cut.png" width="200px" height="180px">
                 <div>
@@ -70,8 +49,9 @@
                 </div>
                 <div>
                     <label for="jadwal">Jadwal</label>
-                    <input type="date" name="jadwal" placeholder="Jadwal" widht="20px" height="20px">
+                    <input type="date" name="jadwal" id="jadwal" onchange="search()" placeholder="Jadwal" widht="20px" height="20px">
                 </div>
+                <ul id="harga"></ul>
                 <input type="submit" value="Submit">
                 <div class="button">
                     <a id="back" href="index.html">Back</a></li>
@@ -82,3 +62,31 @@
 </body>
 
 </html>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // $(document).ready(function(){
+
+    function search() {
+
+        var tanggal = $("#jadwal").val();
+
+        if (tanggal != "") {
+            $.ajax({
+                type: "post",
+                url: "search_jadwal.php",
+                data: "jadwal=" + tanggal,
+                success: function(data) {
+                    console.log(data);
+                    $("#harga").html(data);
+
+                }
+            });
+        }
+
+
+
+    }
+
+    // });
+</script>
