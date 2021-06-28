@@ -45,13 +45,18 @@
                 </div>
                 <div>
                     <label for="jumlah">Jumlah</label>
-                    <input type="number" name="jumlah" placeholder="jumlah tiket" widht="20px" height="20px">
+                    <input type="number" name="jumlah" placeholder="jumlah tiket" width="20px" height="20px">
                 </div>
                 <div>
                     <label for="jadwal">Jadwal</label>
-                    <input type="date" name="jadwal" id="jadwal" onchange="search()" placeholder="Jadwal" widht="20px" height="20px">
+                    <input type="date" name="jadwal" id="jadwal" onchange="search()" placeholder="Jadwal" width="20px" height="20px">
                 </div>
-                <ul id="harga"></ul>
+                <div>
+                    <label for="harga">Harga</label> 
+                    <li type="text" disabled id="harga">
+                    <!-- <ul id="harga"></ul> -->
+                </div>
+
                 <input type="submit" value="Submit">
                 <div class="button">
                     <a id="back" href="index.html">Back</a></li>

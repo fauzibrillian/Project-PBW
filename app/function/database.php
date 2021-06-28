@@ -5,7 +5,7 @@ class database
 
     function connect()
     {
-        return mysqli_connect("localhost", "root", "mafud123", "sistem_reservasi");
+        return mysqli_connect("localhost", "root", "", "testtt");
     }
 
     function tampil_data()
